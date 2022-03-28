@@ -111,8 +111,8 @@ Awardrouter.delete("/awards/:id", async function (req, res, next) {  // 동작 �
     const awardId = req.params.id
 
     const currentUserInfo = await AwardService.getAwardInfo({ awardId });
-    utils.noPermission(currentUserInfo.userId, req.currentUserId)
-    utils.editPermission(currentUserInfo.userId, req.currentUserId);
+    util.noPermission(currentUserInfo.userId, req.currentUserId)
+    util.editPermission(currentUserInfo.userId, req.currentUserId);
 
     
     // 위 id를 이용하여 db에서 데이터 삭제하기
